@@ -1,0 +1,27 @@
+﻿@using WebApplication1.Models
+@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+<div class="d-flex">
+    @foreach (var product in Model)
+    {
+        <div class="container">
+            <div class="row ">
+                <div class="card mt-3" style="width: 18rem;">
+                    <img src="@product.Image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.Descript</p>
+                        <p class="card-text">@product.Price</p>
+                       <a  class="nav-link " style="color:red" aria-current="page"asp-controller="Detail" asp-action="Index"asp-route-id="@product.Id">Go To Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
